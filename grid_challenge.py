@@ -1,0 +1,11 @@
+def gridChallenge(grid):
+    sorted_grid = []
+    for row in grid:
+        sorted_grid.append("".join(sorted(row)))
+    rows = len(sorted_grid)
+    cols = len(sorted_grid[0])
+    for c in range(cols):
+        for r in range(rows - 1):
+            if sorted_grid[r][c] > sorted_grid[r+1][c]:
+                return "NO"
+    return "YES"
